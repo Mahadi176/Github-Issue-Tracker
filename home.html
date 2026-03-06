@@ -17,7 +17,46 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <button class="btn">gra</button>
+    <!-- Header Section -->
+   <header>
+     <div class="p-5 md:flex  items-center bg-base-100 shadow-sm space-y-4">
+        <div class="md:flex flex-1 items-center gap-3 ">
+            <div class="w-9 flex justify-center">
+                <img src="assets/github-logo.png" alt="">
+            </div>
+            <h1 class="text-2xl font-bold">GitHub Issue Tracker</h1>
+        </div>
+        <div class="flex justify-center gap-2">
+            <input id="searchField" type="text" placeholder="Search Issues" class="input input-bordered md:w-auto" />
+            <button id="searchBtn" class="btn btn-primary">Search</button>
+        </div>
+</div>
+</header>
+<!-- Main-Section  -->
+ <main class="mx-auto w-11/12">
+    <!-- Button Section  -->
+    <section class="p-5  shadow-md space-x-3 my-10 ">
+        <button id="btnAll" class="btn btn-primary">All</button>
+        <button id="btnOpen" class="btn btn-primary">Open</button>
+        <button id="btnClose" class="btn btn-primary">Close</button>
+    </section>
+    <!-- Issue section  -->
+    <section class="md:flex items-center justify-between p-5  shadow-md space-x-3 space-y-2">
+        <div class="flex items-center space-x-2">
+            <div class="bg-gray-200 p-2 rounded-full ">
+                <img src="assets/Aperture.png" alt="">
+            </div>
+            <div>
+                <h1 class="text-lg font-bold"><span>50</span> Issues</h1>
+                <p>Track and manage your project issues</p>
+            </div>
+        </div>
+        <div class="flex space-x-3 justify-center">
+            <p>Open</p>
+            <p>Closed</p>
+        </div>
+    </section>
+ </main>
     <script src="script.js"></script>
 </body>
 </html>
