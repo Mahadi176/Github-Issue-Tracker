@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | Github Issue Tracker</title>
+    <title>Login | GitHub Issue Tracker</title>
 <!-- daisyui  -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -17,7 +17,43 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>hi</h1>
+    <!-- login form -->
+    <section class="w-11/12 mx-auto grid place-items-center min-h-screen">
+<fieldset class="fieldset border-base-300 rounded-box w-xs border shadow-xl p-4">
+  <div class="mx-auto text-center py-5">
+        <div class="mx-auto pb-5 flex justify-center">
+            <img src="assets/github-logo.png" alt="">
+        </div>
+        <h1 class="text-xl font-bold">GitHub Issues Tracker</h1>
+        <p class="">Sign in to manage your issues</p>
+  </div>
+  <label class="label font-semibold">Username</label>
+  <input type="text" class="input font-semibold" placeholder="Enter Username" />
+  <p class="text-purple-600">Default: admin</p>
+
+  <label class="label font-semibold">Password</label>
+  <input type="password" class="input font-semibold" placeholder="Enter Password" />
+  <p class="text-purple-600 ">Default: admin123</p>
+
+  <button class="btn  btn-primary rounded-lg mt-4">Sign In</button>
+  
+
+  <div class="pt-10 text-center space-y-5">
+
+    <div class="flex items-center">
+        <div class="flex-grow border-t"></div>
+        <span class="mx-4">OR</span>
+        <div class="flex-grow border-t"></div>
+    </div>
+
+    <p class="text-gray-600">Demo Credentials </p>
+    <div class="bg-gray-100 p-4">
+        <p ><span class="font-bold">Username :</span>admin</p>
+        <p><span class="font-bold">Password :</span>admin123</p>
+    </div>
+    </div>
+</fieldset>
+    </section>
     <script src="script.js"></script>
 </body>
 </html>
