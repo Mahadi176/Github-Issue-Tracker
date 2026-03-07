@@ -15,5 +15,3 @@ const signInBtn = () => {
         return ;
     }
 }
-
-//Homepage 
