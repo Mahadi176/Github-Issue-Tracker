@@ -1,19 +1,36 @@
-const loadingSpinner = document.getElementById('loadSpin')
+let allIssues = []
 const getIssues = () => {
     const url = 'https://phi-lab-server.vercel.app/api/v1/lab/issues'
-    loadingSpinner.classList.remove('hidden')
-    loadingSpinner.classList.add('flex')
+    showLoading()
     fetch(url)
     .then((res) => res.json())
-    .then((data) => {displayAllIssues(data.data)
-        countIssues(data.data)
-        loadingSpinner.classList.add('hidden')
+    .then((data) => {
+         allIssues = data.data
+        displayAllIssues(allIssues)
+        countIssues(allIssues)
+        hideLoading()
     })
 }
 
-const countIssues = (cards) =>{
+const showLoading = () =>{
+    const loadingSpinner = document.getElementById('loadSpin')
+    loadingSpinner.classList.remove('hidden')
+    loadingSpinner.classList.add('flex')
+}
+const hideLoading = () =>{
+    const loadingSpinner = document.getElementById('loadSpin')
+    loadingSpinner.classList.add('hidden')
+}
+
+const filterBtn = () =>{
+    const allBtn = document.getElementById('btnAll')
+    const openBtn = document.getElementById('btnOpen')
+    const closeBtn = document.getElementById('btnClose')
+}
+
+const countIssues = (amount) =>{
         const issueCount = document.getElementById('issueCount')
-        issueCount.innerText = cards.length
+        issueCount.innerText = amount.length
 }
 
 const displayAllIssues = (cards) => {
@@ -21,6 +38,7 @@ const displayAllIssues = (cards) => {
     issueSection.innerHTML = ""
 
    cards.forEach((card)=>{
+    console.log(card)
      const issue = document.createElement('div')
      issue.className = "card bg-base-200 p-4 shadow-lg"
      issue.innerHTML = `
@@ -58,6 +76,26 @@ const displayAllIssues = (cards) => {
     issueSection.appendChild(issue)
    })
         
+}
+
+const filterIssues  = (status) =>{
+
+    if(status == "all"){
+        displayAllIssues(allIssues)
+        countIssues(allIssues)
+      }
+
+    else if(status == "open"){
+        const opened = allIssues.filter(issue => issue.status == "open")
+        displayAllIssues(opened)
+        countIssues(opened)
+      }
+
+    else if(status == "closed"){
+        const closed = allIssues.filter(issue => issue.status == "closed")
+        displayAllIssues(closed)
+        countIssues(closed)
+      }
 }
 
 getIssues()

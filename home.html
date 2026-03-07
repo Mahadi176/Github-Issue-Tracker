@@ -36,9 +36,9 @@
  <main class="mx-auto w-11/12">
     <!-- Button Section  -->
     <section class="p-5  shadow-md space-x-3 my-10 ">
-        <button onclick="getIssues()" id="btnAll" class="btn btn-primary">All</button>
-        <button id="btnOpen" class="btn btn-primary">Open</button>
-        <button id="btnClose" class="btn btn-primary">Close</button>
+        <button onclick="filterIssues('all')" id="btnAll" class="btn bg-purple-600 text-white">All</button>
+        <button onclick="filterIssues('open')" id="btnOpen" class="btn bg-white text-black ">Open</button>
+        <button onclick="filterIssues('closed')" id="btnClose" class="btn ">Close</button>
     </section>
     <!-- Issue section  -->
     <section class="md:flex items-center justify-between p-5  shadow-md space-x-3 space-y-2">
