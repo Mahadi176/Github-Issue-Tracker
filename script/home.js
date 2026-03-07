@@ -22,12 +22,6 @@ const hideLoading = () =>{
     loadingSpinner.classList.add('hidden')
 }
 
-const filterBtn = () =>{
-    const allBtn = document.getElementById('btnAll')
-    const openBtn = document.getElementById('btnOpen')
-    const closeBtn = document.getElementById('btnClose')
-}
-
 const countIssues = (amount) =>{
         const issueCount = document.getElementById('issueCount')
         issueCount.innerText = amount.length
@@ -71,7 +65,7 @@ const displayAllIssues = (cards) => {
             issue.classList.add('border-t-6','border-green-600')
         }
        else if(card.status == "closed"){
-            issue.classList.add('border-t-6','border-purple-600')
+            issue.classList.add('border-t-6','border-violet-600')
         }
     issueSection.appendChild(issue)
    })
