@@ -16,7 +16,7 @@ const displayAllIssues = (cards) => {
      issue.innerHTML = `
          
             <div class="flex justify-between items-center my-2">
-                <div><img src="assets/Closed- Status .png" alt=""></div>
+                <div><img src="${card.status == "open"? "assets/Open-Status.png":"assets/Closed-Stat.png" }" alt=""></div>
                 <h2 class="bg-gray-200 px-2 rounded-lg ">${card.priority}</h2>  
             </div>
             <div class="my-3 space-y-3">
@@ -37,16 +37,17 @@ const displayAllIssues = (cards) => {
                     <p>Update : ${card.updatedAt}</p>
                 </div>
             </div>
-     `
+     ` 
+        // open or close status 
         if(card.status == "open"){
             issue.classList.add('border-t-6','border-green-600')
         }
        else if(card.status == "closed"){
             issue.classList.add('border-t-6','border-purple-600')
         }
-
     issueSection.appendChild(issue)
    })
+        
 }
 
 getIssues()
