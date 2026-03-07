@@ -2,7 +2,14 @@ const getIssues = () => {
     const url = 'https://phi-lab-server.vercel.app/api/v1/lab/issues'
     fetch(url)
     .then((res) => res.json())
-    .then((data) => displayAllIssues(data.data))
+    .then((data) => {displayAllIssues(data.data)
+                     countIssues(data.data)
+    })
+}
+
+const countIssues = (cards) =>{
+        const issueCount = document.getElementById('issueCount')
+        issueCount.innerText = cards.length
 }
 
 const displayAllIssues = (cards) => {
@@ -10,7 +17,6 @@ const displayAllIssues = (cards) => {
     issueSection.innerHTML = ""
 
    cards.forEach((card)=>{
-     console.log(card)
      const issue = document.createElement('div')
      issue.className = "card bg-base-200 p-4 shadow-lg"
      issue.innerHTML = `
