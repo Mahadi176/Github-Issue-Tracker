@@ -1,9 +1,13 @@
+const loadingSpinner = document.getElementById('loadSpin')
 const getIssues = () => {
     const url = 'https://phi-lab-server.vercel.app/api/v1/lab/issues'
+    loadingSpinner.classList.remove('hidden')
+    loadingSpinner.classList.add('flex')
     fetch(url)
     .then((res) => res.json())
     .then((data) => {displayAllIssues(data.data)
-                     countIssues(data.data)
+        countIssues(data.data)
+        loadingSpinner.classList.add('hidden')
     })
 }
 
@@ -34,11 +38,11 @@ const displayAllIssues = (cards) => {
             </div>
             <hr>
             <div class="md:flex justify-between items-center my-5">
-                <div>
+                <div class="space-y-2">
                     <p>${card.author}</p>
                     <p>Assignee : ${card.assignee}</p>
                 </div>
-                <div>
+                <div class="space-y-2" >
                     <p>${card.createdAt}</p>
                     <p>Update : ${card.updatedAt}</p>
                 </div>
