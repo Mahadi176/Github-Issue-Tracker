@@ -32,7 +32,6 @@ const displayAllIssues = (cards) => {
     issueSection.innerHTML = ""
 
    cards.forEach((card)=>{
-    console.log(card)
      const issue = document.createElement('div')
      issue.className = "card bg-base-200 p-4 shadow-lg"
      issue.innerHTML = `
@@ -93,3 +92,12 @@ const filterIssues  = (status) =>{
 }
 
 getIssues()
+
+document.getElementById('btnSearch')
+.addEventListener('click', ()=>{
+    const input = document.getElementById('inputSearch')
+    const searchValue = input.value.trim().toLowerCase()
+    const searchFilterIssues = allIssues.filter(issue =>issue.title.toLowerCase().includes(searchValue))
+    displayAllIssues(searchFilterIssues)
+    countIssues(searchFilterIssues)
+})
