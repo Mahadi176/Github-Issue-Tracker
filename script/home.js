@@ -73,17 +73,33 @@ const displayAllIssues = (cards) => {
 }
 
 const filterIssues  = (status) =>{
-    
+
+    const allBtn = document.getElementById('btnAll')
+    const openBtn = document.getElementById('btnOpen')
+    const closeBtn = document.getElementById('btnClose')
+
     if(status == "all"){
+        allBtn.classList.add('btn-primary')
+        openBtn.classList.remove('btn-primary')
+        closeBtn.classList.remove('btn-primary')
+
         displayAllIssues(allIssues)
         countIssues(allIssues)
       }
     else if(status == "open"){
+        allBtn.classList.remove('btn-primary')
+        openBtn.classList.add('btn-primary')
+        closeBtn.classList.remove('btn-primary')
+
         const opened = allIssues.filter(issue => issue.status == "open")
         displayAllIssues(opened)
         countIssues(opened)
         }
     else if(status == "closed"){
+        allBtn.classList.remove('btn-primary')
+        openBtn.classList.remove('btn-primary')
+        closeBtn.classList.add('btn-primary')
+
         const closed = allIssues.filter(issue => issue.status == "closed")
         displayAllIssues(closed)
         countIssues(closed)
