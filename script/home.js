@@ -73,7 +73,7 @@ const displayAllIssues = (cards) => {
 }
 
 const filterIssues  = (status) =>{
-
+    
     if(status == "all"){
         displayAllIssues(allIssues)
         countIssues(allIssues)
