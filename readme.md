@@ -28,4 +28,4 @@ Ans:
 Template literal is the modern way of creating String in JavaScript .
 which helps it to be dynamic and code can be embedded inside .
 
-Example :  `<p>Name : ${info.name}</p>`
+Example :  ``<p>Name : ${info.name}</p>``
